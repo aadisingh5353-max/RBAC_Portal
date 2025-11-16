@@ -115,3 +115,99 @@ Body:
   "token": "..."
 }
 
+## 2. User Login
+
+POST → `/login`
+
+Body:
+```json
+{
+  "email": "john@gmail.com",
+  "password": "123456"
+}
+```
+
+Successful Response:
+```json
+{
+  "token": "your_jwt_token_here"
+}
+```
+## 3. Access Protected Routes
+
+To access protected routes, include the JWT token in headers:
+
+```
+Authorization: Bearer <your_token_here>
+```
+
+Example (Admin-only route):
+
+GET → `/admin/data`
+## 4. Role-Based Access
+
+### Admin Routes
+- `/admin/data`
+
+### Manager Routes
+- `/manager/data`
+
+### User Routes
+- `/user/data`
+
+If a user with insufficient role tries to access a route, server returns:
+
+```
+403 Forbidden – Access Denied
+```
+# Troubleshooting
+
+### 1. MongoDB Connection Error
+- Ensure MongoDB is running
+- Verify `MONGO_URI` in `.env`
+
+### 2. JWT Token Missing / Invalid
+- Include header:  
+```
+Authorization: Bearer <token>
+```
+
+### 3. 403 Access Denied
+- User does not have required role
+- Check role in database
+
+### 4. bcrypt error or installation problems
+Run:
+```
+npm uninstall bcrypt
+npm install bcrypt
+```
+# Project Structure
+
+```
+RBAC_Portal/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── config/
+├── server.js
+└── package.json
+```
+# Technologies Used
+- Node.js  
+- Express.js  
+- MongoDB  
+- Mongoose  
+- JSON Web Token (JWT)  
+- Bcrypt  
+- dotenv  
+# Future Enhancements
+- Add refresh tokens
+- Add multi-role support
+- Admin dashboard UI
+- User activity logs
+- Email verification
+- Advanced permissions (CRUD-level)
+# License
+This project is created for learning and educational use. You may modify and reuse it freely.
