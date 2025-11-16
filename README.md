@@ -114,26 +114,4 @@ Body:
 {
   "token": "..."
 }
-Authorization: Bearer <your_token_here>
 
-Authorization: Bearer <token>
-npm uninstall bcrypt
-npm install bcrypt
-db.users.find()
-RBAC/
-├── controllers/
-│   └── authController.js     # Login / Register logic
-│
-├── middleware/
-│   ├── auth.js               # JWT verification
-│   └── role.js               # Role-based access
-│
-├── models/
-│   └── User.js               # User schema
-│
-├── routes/
-│   └── authRoutes.js         # All API routes
-│
-├── .env                      # Environment variables
-├── server.js                 # Entry point
-└── package.json
