@@ -34,6 +34,89 @@ Before running this application, ensure you have:
 
 ---
 
+---
+
+## **2. MongoDB Community Server**
+
+Download MongoDB:  
+https://www.mongodb.com/try/download/community  
+
+Default port: **27017**
+
+Ensure MongoDB is running (either via Compass or terminal).
+
+---
+
+## **3. Postman (optional, for API testing)**  
+Download: https://www.postman.com/downloads/
+
+---
+
+# Setup Instructions
+
+## **Step 1: Clone the Project**
+
+
+---
+
+## **Step 2: Install Dependencies**
+
+
+This will install:
+- Express  
+- Mongoose  
+- JWT  
+- Bcrypt  
+- dotenv  
+
+---
+
+## **Step 3: Configure Environment Variables**
+
+Create a file named `.env` in the project root:
+
+
+**Important:**  
+Replace `your_secret_key_here` with any random long string.
+
+---
+
+## **Step 4: Start MongoDB**
+
+If installed normally:
+
+Windows CMD:
+
+Or using terminal:
+
+---
+
+## **Step 5: Run the Application**
+
+
+Server should start on:
+
+---
+
+# Application Guide
+
+## **1. Register a User**
+POST → `/register`
+
+Body:
+```json
+{
+  "username": "john",
+  "email": "john@gmail.com",
+  "password": "123456",
+  "role": "admin"
+}
+{
+  "token": "..."
+}
+Authorization: Bearer <your_token_here>
+
+
 ## **1. Node.js (v14 or higher recommended)**
 
 Download from: https://nodejs.org/en/download  
